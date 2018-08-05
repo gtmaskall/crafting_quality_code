@@ -12,7 +12,7 @@ class TestStockPriceSummary(unittest.TestCase):
         """Test stock_price_summary with zero-length input"""
 
         actual = a1.stock_price_summary([])
-        expected = (0, 0)
+        expected = (0.0, 0.0)
         self.assertEqual(actual, expected)
 
     def test_stock_price_summary_1_zero_int(self):
@@ -21,7 +21,7 @@ class TestStockPriceSummary(unittest.TestCase):
         Smallest case with zero change (as an integer)."""
 
         actual = a1.stock_price_summary([0])
-        expected = (0, 0)
+        expected = (0.0, 0.0)
         self.assertEqual(actual, expected)
 
     def test_stock_price_summary_1_zero_float(self):
@@ -30,7 +30,7 @@ class TestStockPriceSummary(unittest.TestCase):
         Smallest case with zero change (as a float)."""
 
         actual = a1.stock_price_summary([0.0])
-        expected = (0, 0)
+        expected = (0.0, 0.0)
         self.assertEqual(actual, expected)
 
 
@@ -40,7 +40,7 @@ class TestStockPriceSummary(unittest.TestCase):
         Smallest positive change test case."""
 
         actual = a1.stock_price_summary([0.45])
-        expected = (0.45, 0)
+        expected = (0.45, 0.0)
         self.assertEqual(actual, expected)
 
     def test_stock_price_summary_1_negative(self):
@@ -49,7 +49,7 @@ class TestStockPriceSummary(unittest.TestCase):
         Smallest negative change test case."""
 
         actual = a1.stock_price_summary([-0.42])
-        expected = (0, -0.42)
+        expected = (0.0, -0.42)
         self.assertEqual(actual, expected)
 
     # smallest test cases with > 1 arg
@@ -60,7 +60,7 @@ class TestStockPriceSummary(unittest.TestCase):
         Combine int and float."""
 
         actual = a1.stock_price_summary([0, 0.0])
-        expected = (0, 0)
+        expected = (0.0, 0.0)
         self.assertEqual(actual, expected)
 
     def test_stock_price_summary_2_positive(self):
@@ -69,7 +69,7 @@ class TestStockPriceSummary(unittest.TestCase):
         Smallest multiple positive changes test case."""
 
         actual = a1.stock_price_summary([0.14, 0.21])
-        expected = (0.35, 0)
+        expected = (0.35, 0.0)
         self.assertEqual(actual, expected)
 
     def test_stock_price_summary_2_negative(self):
@@ -78,7 +78,7 @@ class TestStockPriceSummary(unittest.TestCase):
         Smallest multiple negative changes test case."""
 
         actual = a1.stock_price_summary([-0.15, -0.23])
-        expected = (0, -0.38)
+        expected = (0.0, -0.38)
         self.assertEqual(actual, expected)
 
     def test_stock_price_summary_1_negative_1_positive_A(self):

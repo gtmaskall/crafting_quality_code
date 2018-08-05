@@ -53,7 +53,7 @@ def stock_price_summary(price_changes):
 
     gains = [price_change for price_change in price_changes if price_change > 0]
     losses = [price_change for price_change in price_changes if price_change < 0]
-    return sum(gains), sum(losses)
+    return sum(gains, 0.0), sum(losses, 0.0)
 
 
 def swap_k(L, k):
