@@ -113,6 +113,33 @@ class Maze:
     """ A 2D maze. """
 
     # Write your Maze methods here.
+    def __init__(self, maze, rat_1, rat_2):
+        """(Maze, list of list of str, Rat, Rat) -> NoneType
+
+        Initialize the maze's four instance variables:
+        maze - contents of maze (walls, sprouts etc)
+        rat_1 - first rat
+        rat_2 - second rat
+        num_sprouts_left - number of uneaten sprouts
+
+        >>> maze = Maze([['#','#','#'],\
+                         ['#','.','#'],\
+                         ['#','@','#'],\
+                         ['#','#','#']],\
+                         Rat('J', 1, 1),\
+                         Rat('G', 2, 1))
+        >>> maze.maze[0][1]
+        '#'
+        >>> maze.maze[2][1]
+        '@'
+        >>> maze.rat_1.row
+        1
+        """
+
+        self.maze = maze
+        self.rat_1 = rat_1
+        self.rat_2 = rat_2
+
 
 if __name__ == '__main__':
     import doctest
