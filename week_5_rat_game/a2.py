@@ -140,6 +140,27 @@ class Maze:
         self.rat_1 = rat_1
         self.rat_2 = rat_2
 
+    def is_wall(self, row, col):
+        """(Maze, int, int) -> bool
+
+        Return True if and only if there is a wall at the given
+        row and column of the maze
+
+        >>> maze = Maze([['#','#','#'],\
+                         ['#','.','#'],\
+                         ['#','@','#'],\
+                         ['#','#','#']],\
+                         Rat('J', 1, 1),\
+                         Rat('G', 2, 1))
+        >>> maze.is_wall(0, 0)
+        True
+        >>> maze.is_wall(1, 1)
+        False
+        >>> maze.is_wall(2, 1)
+        False
+        """
+
+        return self.maze[row][col] == WALL
 
 if __name__ == '__main__':
     import doctest
